@@ -1,0 +1,30 @@
+button {
+    height: 50px;
+    background-color: #55AAFA;
+    
+}
+
+button:hover{
+    background-color: #00A8FA;
+}
+
+button:active{
+    background-color: #0088FA;
+}
+
+.hSeparator{
+    border-bottom: 1px solid black; 
+    margin: 20px 0px;
+}
+
+.spaceUnder{
+    margin-bottom: 20px;
+}
+
+.marginV{
+    margin: 20px 0px;
+}
+
+.marginH{
+    margin: 0px 20px;
+}
