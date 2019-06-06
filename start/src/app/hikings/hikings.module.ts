@@ -5,14 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HinkingComponent } from './hinking/hinking.component';
 import { ListPage } from './list/list.page';
+import { HinkingComponent } from './hinking/hinking.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListPage
-  }
+    component: ListPage,
+  }, 
 ];
 
 @NgModule({
@@ -22,7 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListPage]
+  declarations: [ListPage, HinkingComponent]
 })
 export class HikingsModule {
 

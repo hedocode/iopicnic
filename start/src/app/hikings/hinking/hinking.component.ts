@@ -7,23 +7,14 @@ import { Hiking } from '../hiking';
   templateUrl: './hinking.component.html',
   styleUrls: ['./hinking.component.scss'],
 })
+
 export class HinkingComponent implements OnInit {
 
-  hikings: Hiking[];
-  selectedHiking: Hiking;
+  hiking: Hiking;
 
   constructor(private hikingsService: HinkingsService) { }
 
   ngOnInit() {
-    this.getHikings();
-  }
 
-  onSelect(hiking: Hiking) {
-    this.selectedHiking = hiking;
   }
-
-  getHikings(): void {
-    this.hikingsService.getHikings().subscribe(hikings => this.hikings = hikings);
-  }
-
 }

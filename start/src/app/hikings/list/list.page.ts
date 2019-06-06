@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { HinkingComponent } from '../hinking/hinking.component';
+import { Hiking } from '../hiking';
+import { HinkingsService } from '../hinkings.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
-  constructor() { }
+  hikings: Hiking[];
+  selectedHiking: Hiking;
+
+  constructor(private hikingsService: HinkingsService) { }
 
   ngOnInit() {
+    this.getHikings();
   }
 
+  onSelect(hiking: Hiking) {
+    this.selectedHiking = hiking;
+  }
+
+  getHikings(): void {
+    this.hikingsService.getHikings().subscribe(hikings => this.hikings = hikings);
+  }
 }
