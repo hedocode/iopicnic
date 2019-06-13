@@ -10,11 +10,11 @@ import { Hiking } from '../hiking';
 
 export class HinkingComponent implements OnInit {
 
-  hiking: Hiking;
+  hikings: Hiking[];
 
-  constructor(private hikingsService: HinkingsService) { }
+  constructor(private hikingsService: HinkingsService) { 
+  }
 
   ngOnInit() {
-
   }
 }

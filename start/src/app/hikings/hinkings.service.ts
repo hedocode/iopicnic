@@ -11,6 +11,7 @@ export class HinkingsService {
   constructor() { }
 
   getHikings(): Observable<Hiking[]> {
+    console.log(HIKINGS);
     return of(HIKINGS);
   }
 }
