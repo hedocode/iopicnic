@@ -4,6 +4,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+
+  <div class="center">
+    <img [src]="hiking.image" style="width: 100%;height: 30vh;
+    object-fit: cover;
+    object-position: 50% 50%;"/>
+
+    <div class="adaptwidth bubble">
+      <ion-card-header>
+          
+          <ion-card-title>
+            {{ hiking.title }}
+          </ion-card-title> 
+
+          <div style="margin: 20px; font-weight: lighter;">
+            Note : {{hiking.note}}
+          </div>
+
+          <ion-card-subtitle>
+            {{hiking.address}}
+          </ion-card-subtitle>
+
+          <div style="margin: 20px; font-weight: lighter;">
+            Duration : {{hiking.duration}} min
+          </div>
+          <div style="margin: 20px; font-weight: lighter;">
+              Distance : {{hiking.distance}} km
+          </div>
+        </ion-card-header>
+    
+        <ion-card-content>
+          {{hiking.description}}
+        </ion-card-content>
+
+        <div class="center">
+          <ion-button>Start</ion-button>
+        </div>
+    </div>
+    <div id="map" style="width:100%; min-height:50vh;"></div>
+  </div>
 
 </ion-content>

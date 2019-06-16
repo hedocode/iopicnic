@@ -12,7 +12,8 @@ export class HinkingComponent implements OnInit {
 
   hikings: Hiking[];
 
-  constructor(private hikingsService: HinkingsService) { 
+  constructor(public hikingsService: HinkingsService) {
+
   }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 export class Hiking {
+    id: number;
     title: string;
     address: string;
     description: string;
@@ -7,7 +8,8 @@ export class Hiking {
     note: number;
     image: string;
 
-    constructor(title: string,
+    constructor(id: number,
+                title: string,
                 address: string,
                 description: string,
                 duration: number,

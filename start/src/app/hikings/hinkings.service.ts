@@ -11,7 +11,10 @@ export class HinkingsService {
   constructor() { }
 
   getHikings(): Observable<Hiking[]> {
-    console.log(HIKINGS);
     return of(HIKINGS);
+  }
+
+  getHiking(x): Observable<Hiking> {
+    return of(HIKINGS[x]);
   }
 }
