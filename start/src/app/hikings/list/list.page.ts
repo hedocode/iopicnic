@@ -8,6 +8,7 @@ import { HinkingsService } from '../hinkings.service';
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
 })
+
 export class ListPage implements OnInit {
 
   hikings: Hiking[];

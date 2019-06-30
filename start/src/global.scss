@@ -28,8 +28,7 @@
 }
 
 .center{
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
     justify-content: center; 
     align-items: center;
 }
@@ -38,6 +37,24 @@
     width: 50%;
 }
 
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.spaceBetween{
+    justify-content: space-between;
+}
+
+.fullsize{
+    width: 100%;
+    height: 100%;
+}
 
 @media screen and (max-width: 700px) {
     .adaptwidth{

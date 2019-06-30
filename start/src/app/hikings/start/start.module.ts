@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { Padstart0Pipe } from '../../pipes/padstart0.pipe';
+
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListPage } from './list/list.page';
-import { HinkingComponent } from './hinking/hinking.component';
+import { StartPage } from './start.page';
+import { TimerComponent } from '../timer/timer.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListPage,
+    component: StartPage
   }
 ];
 
@@ -22,8 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListPage, HinkingComponent],
+  declarations: [StartPage, TimerComponent, Padstart0Pipe]
 })
-export class HikingsModule {
-
-}
+export class StartPageModule {}

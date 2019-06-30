@@ -1,0 +1,41 @@
+<ion-content >
+
+  <div class="center column">
+
+    <div class="adaptwidth center">
+      
+      <div class="row center fullsize spaceBetween">
+        <img class="bubble" [src]="hiking.image" style="width: 100px;height: 50px;
+          object-fit: cover; object-position: 50% 50%;"/>
+        <ion-card-title>
+          {{ hiking.title }}
+        </ion-card-title> 
+        <div class="bubble">
+          <app-timer minutes="{{ hiking.duration }}"></app-timer>
+        </div>
+      </div>
+
+
+    </div>
+    <div id="map" style="width:100%; min-height:50vh;"></div>
+    
+    <div class="center column adaptwidth" >
+      <h2>Etapes</h2>
+      <div id="steps" class="column fullsize bubble" style="max-height: 30vh;">
+        <div class="bubble currentStep">
+          <div id="step1"><strong>1 - </strong> Aller à au départ de la randonnée</div>
+        </div>
+        <div class="bubble" *ngFor="let step of hiking.steps; let i = index" [attr.data-index]="i" >
+          <div id="step{{i + 2}}"><strong>{{i + 2}} - </strong> {{step[0]}}</div>
+        </div>
+      </div>
+
+      <ion-button style="height: 50px;" (click)="nextstep();">Passez à l'étape suivante</ion-button>
+    </div>
+
+    <a class="center" [routerLink]="['/list']" >
+      <ion-button>Finish</ion-button>
+    </a>
+  </div>
+
+</ion-content>

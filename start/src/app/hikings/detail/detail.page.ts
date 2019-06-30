@@ -3,9 +3,11 @@ import { Hiking } from '../hiking';
 import { HinkingsService } from '../hinkings.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { element } from '@angular/core/src/render3';
-import leaflet from 'leaflet';
+import 'leaflet';
+import 'leaflet-routing-machine';
 import { NavController } from '@ionic/angular';
+
+declare var L: any;
 
 @Component({
   selector: 'app-detail',
@@ -25,27 +27,23 @@ export class DetailPage implements OnInit {
   }
 
   loadmap() {
-    this.map = leaflet.map('map').fitWorld();
-    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    this.map = L.map('map').fitWorld();
+
+    
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ' +
       'contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       maxZoom: 18
     }).addTo(this.map);
 
-    this.map.locate({
-      setView: true,
-      maxZoom: 10
-    }).on('locationfound', (e) => {
-      const markerGroup = leaflet.featureGroup();
-      const marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
-        alert('Marker clicked');
-      });
-      markerGroup.addLayer(marker);
-      this.map.addLayer(markerGroup);
-      }).on('locationerror', (err) => {
-        alert(err.message);
-    });
+    const markerGroup = L.featureGroup();
+    L.marker([this.hiking.latitude, this.hiking.longitude]).on('click', () => {
+      alert('You are here');
+    }).addTo(this.map);
+
+    this.map.setView( [this.hiking.latitude, this.hiking.longitude], 13);
   }
 
   constructor(  private route: ActivatedRoute,
@@ -61,5 +59,4 @@ export class DetailPage implements OnInit {
       this.hiking = element;
     });
   }
-
 }

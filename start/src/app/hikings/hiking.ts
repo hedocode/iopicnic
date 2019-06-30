@@ -7,6 +7,9 @@ export class Hiking {
     distance: number;
     note: number;
     image: string;
+    latitude: number;
+    longitude: number;
+    steps: object;
 
     constructor(id: number,
                 title: string,
@@ -15,7 +18,10 @@ export class Hiking {
                 duration: number,
                 distance: number,
                 note: number,
-                image: string) {
+                image: string,
+                latitude: number,
+                longitude: number,
+                steps: object) {
         this.title = title;
         this.address = address;
         this.description = description;
@@ -23,5 +29,8 @@ export class Hiking {
         this.distance = distance;
         this.note = note;
         this.image = image;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.steps = steps;
     }
 }
